@@ -5,6 +5,10 @@ RSpec.describe Artist do
     it {should have_many :songs}
   end
 
+  describe 'validations' do
+    it { should validate_uniqueness_of :name}
+  end
+
   describe 'instance methods' do
     describe '#average_song_length' do
       before :each do

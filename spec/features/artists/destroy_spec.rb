@@ -10,11 +10,11 @@ RSpec.describe 'destroying an artist' do
   it 'can delete the artist from the index page' do
     artist = Artist.create(name: 'Prince')
 
-    visit '/artists'
+    visit artists_path
 
     click_button 'Delete'
 
-    expect(current_path).to eq('/artists')
+    expect(current_path).to eq(artists_path)
     expect(page).to_not have_content('Prince')
   end
 end

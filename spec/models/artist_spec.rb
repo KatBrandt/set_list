@@ -5,7 +5,6 @@ RSpec.describe Artist do
     @prince = Artist.create!(name: 'Prince')
     @rtj = Artist.create!(name: 'Run The Jewels')
     @caamp = Artist.create!(name: 'Caamp')
-    @jgb = Artist.create!(name: 'Jerry Garcia Band')
     @billie = Artist.create!(name: 'Billie Eilish')
     @lcd = Artist.create!(name: 'LCD Soundsystem')
 
@@ -90,6 +89,13 @@ RSpec.describe Artist do
     describe '.name_longest_avg' do
       it 'returns the name of artist with longest avg' do
         expect(Artist.name_longest_avg).to eq 'Run The Jewels'
+      end
+    end
+
+    describe '.least_plays' do
+      it 'returns the 3 artists names with the lowest total play_count for all their songs' do
+
+      expect(Artist.least_plays).to eq ["Prince", "Caamp", "LCD Soundsystem"]
       end
     end
   end

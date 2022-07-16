@@ -4,9 +4,9 @@
   button_text: 'Update Artist'
 } %>
 
-
+<%# The partial allows us to DRY up the code below since that's shared with new. %>
 <%# <%= form_with url: "/artists/#{@artist.id}", method: :patch, local: true do |form| %>
-  <%# <%= form.label :name %> %>
-  <%# <%= form.text_field :name %> %>
-  <%# <%= form.submit 'Update Artist' %> %>
-<%# <% end %>  %>
+  <%# <%= form.label :name %>
+  <%# <%= form.text_field :name %>
+  <%# <%= form.submit 'Update Artist' %>
+<%# <% end %>

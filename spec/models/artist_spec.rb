@@ -80,5 +80,17 @@ RSpec.describe Artist do
         expect(Artist.longest_song).to eq "Run The Jewels"
       end
     end
+
+    describe '.avg_length_of_songs' do
+      it 'returns the average length of each artists songs' do
+        expect(Artist.avg_length_of_songs).to match_array [@prince, @rtj, @caamp, @lcd, @billie]
+      end
+    end
+
+    describe '.name_longest_avg' do
+      it 'returns the name of artist with longest avg' do
+        expect(Artist.name_longest_avg).to eq 'Run The Jewels'
+      end
+    end
   end
 end

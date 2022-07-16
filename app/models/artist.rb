@@ -30,6 +30,19 @@ class Artist < ApplicationRecord
     # .name
   end
 
+  def self.avg_length_of_songs
+    joins(:songs)
+    .select('artists.*, avg(length) as avg')
+    .group(:id)
+  end
+
+  def self.name_longest_avg
+    avg_length_of_songs
+    .order('avg desc')
+    .first
+    .name
+  end
+
   def average_song_length
     songs.average(:length).to_f
   end

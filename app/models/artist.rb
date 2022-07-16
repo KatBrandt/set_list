@@ -21,6 +21,13 @@ class Artist < ApplicationRecord
     .order('longest desc')
     .first
     .name
+    # if from scratch could do it like below:
+    # joins(:songs)
+    # .select('artists.name, max(length) as longest')
+    # .group(:name)
+    # .order('longest desc')
+    # .limit(1)[0]
+    # .name
   end
 
   def average_song_length

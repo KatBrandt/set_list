@@ -44,12 +44,19 @@ class Artist < ApplicationRecord
   end
 
   def self.least_plays
-    joins(:songs)
+    t = joins(:songs)
     .select('artists.name, sum(play_count) as total_plays')
     .group(:name)
     .order('total_plays asc')
     .limit(3)
-    .pluck(:name)
+    # .pluck(:name)
+  end
+
+  def self.complete_song_list
+    joins(:songs)
+    .select('artists.name, songs.title')
+    .group(:name)
+    
   end
 
   def average_song_length

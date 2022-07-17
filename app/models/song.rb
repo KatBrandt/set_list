@@ -5,4 +5,8 @@ class Song < ApplicationRecord
 
   validates :title, length: { maximum: 500 }
   validates_numericality_of :play_count, only_integer: true
+
+  def self.longest_length
+    maximum(:length)
+  end
 end

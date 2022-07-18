@@ -11,9 +11,9 @@ describe 'creating a new song' do
 
     expect(page).to have_content(artist.name)
 
-    fill_in "title", with: title
-    fill_in "length", with: length
-    fill_in "play_count", with: play_count
+    fill_in "song_title", with: title
+    fill_in "song_length", with: length
+    fill_in "song_play_count", with: play_count
 
     click_on "Create Song"
 

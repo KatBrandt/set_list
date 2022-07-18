@@ -1,6 +1,6 @@
 <h1>Create a new song by <%= @artist.name %></h1>
 
-<%= form_with model: @song, url: "artists/#{@artist.id}/songs", local: true do |f| %>
+<%= form_with model: @song, url: "/artists/#{@artist.id}/songs", local: true do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 

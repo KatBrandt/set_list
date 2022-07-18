@@ -95,7 +95,7 @@ RSpec.describe Artist do
     describe '.least_plays' do
       it 'returns the 3 artists names with the lowest total play_count for all their songs' do
 
-      # expect(Artist.least_plays).to eq ["Prince", "Caamp", "LCD Soundsystem"]
+      expect(Artist.least_plays).to eq ["Prince", "Caamp", "LCD Soundsystem"]
       end
     end
 

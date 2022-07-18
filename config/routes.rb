@@ -4,9 +4,10 @@ Rails.application.routes.draw do
   # get '/songs/:id', to: 'songs#show'
   resources :songs, only: [:index, :show]
 
-  get '/artists/:artist_id/songs', to: 'artist_songs#index'
-  get '/artists/:artist_id/songs/new', to: 'songs#new'
-  post '/artists/:artist_id/songs', to: 'songs#create'
+  # get '/artists/:artist_id/songs', to: 'artist_songs#index'
+  # get '/artists/:artist_id/songs/new', to: 'songs#new'
+  # post '/artists/:artist_id/songs', to: 'songs#create'
+
 
   # get '/artists', to: 'artists#index'
   # get '/artists/new', to: 'artists#new'
@@ -14,7 +15,9 @@ Rails.application.routes.draw do
   # get '/artists/:id/edit', to: 'artists#edit'
   # patch '/artists/:id', to: 'artists#update'
   # delete '/artists/:id', to: 'artists#destroy'
-  resources :artists
+  resources :artists do
+    resources :songs, only: [:index, :new, :create]
+  end
   # get '/playlists', to: 'playlists#index'
   resources :playlists, only: [:index]
 end

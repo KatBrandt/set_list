@@ -7,7 +7,7 @@ describe 'When a user adds songs to their cart' do
 
     visit songs_path
 
-    within("song-#{song.id}") do
+    within("#song-#{song.id}") do
       click_on "Add Song"
     end
 

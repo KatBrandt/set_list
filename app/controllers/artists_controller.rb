@@ -5,7 +5,6 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
-    cookies[:secret] = "It's a secret!"
   end
 
   def new

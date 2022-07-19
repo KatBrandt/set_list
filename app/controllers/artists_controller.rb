@@ -3,6 +3,11 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
   end
 
+  def show
+    @artist = Artist.find(params[:id])
+    cookies[:secret] = "It's a secret!"
+  end
+
   def new
     @artist = Artist.new
   end

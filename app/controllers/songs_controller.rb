@@ -1,6 +1,7 @@
 class SongsController < ApplicationController
   def index
     @songs = Song.all
+    binding.pry
     @cart = Cart.new(session[:cart])
   end
 

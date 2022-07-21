@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <section class=<%= type %>>
+        <p><%= msg %></p>
+      </section>
+    <% end %>
+
+    <p><%= link_to "Cart: #{cart.total_count}", '/cart' %></p>
+
     <%= yield %>
   </body>
 </html>

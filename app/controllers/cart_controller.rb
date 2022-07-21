@@ -10,6 +10,7 @@ class CartController < ApplicationController
     quantity = session[:cart][song_id_str] += 1
 
     flash[:notice] = "You now have #{pluralize(quantity, 'copy')} of #{song.title} in your cart."
+    
     redirect_to songs_path
   end
 end

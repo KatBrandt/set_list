@@ -16,8 +16,8 @@
       </section>
     <% end %>
 
-    <p>Cart: <%= cart.total_count %></p>
-    
+    <p><%= link_to "Cart: #{cart.total_count}", '/cart' %></p>
+
     <%= yield %>
   </body>
 </html>

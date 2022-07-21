@@ -1,6 +1,10 @@
 class CartController < ApplicationController
   include ActionView::Helpers::TextHelper
 
+  def index
+
+  end
+
   def update
     song = Song.find(params[:song_id])
 
@@ -10,7 +14,7 @@ class CartController < ApplicationController
     # quantity = session[:cart][song_id_str] += 1
     #Refactored to below:
     # session getting & setting still happening in controller
-    #but any actions with the cart go to the poro
+   #but any actions with the cart go to the poro
 
     cart.add_song(song.id)
     session[:cart] = cart.contents

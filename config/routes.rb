@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   # get '/playlists', to: 'playlists#index'
   resources :playlists, only: [:index]
 
+  get '/cart', to: 'cart#index'
   patch '/cart/:song_id', to: 'cart#update'
 end
